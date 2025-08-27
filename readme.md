@@ -4,6 +4,7 @@ This project is a Golang application located in the Music folder. It aims to ser
 
 ## Overview
 
+- **Database:** MySQL
 - **Language:** Go
 - **Purpose:** Initial template for Golang projects and experimentation.
 

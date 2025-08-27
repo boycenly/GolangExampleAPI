@@ -14,7 +14,7 @@ func main() {
 
 	// 2. Setup Fiber
 	app := fiber.New()
-
+	routes.SetupAuthRoutes(app)
 	// 3. Setup routes
 	routes.SetupExampleRoutes(app)
 
