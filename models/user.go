@@ -10,4 +10,5 @@ type User struct {
 	Password  string    `json:"-"` // disembunyikan saat JSON
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+	IsActive  bool      `json:"is_active" gorm:"default:false"`
 }

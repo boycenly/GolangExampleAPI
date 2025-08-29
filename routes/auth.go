@@ -83,7 +83,9 @@ func SetupAuthRoutes(app *fiber.App) {
 		if err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(req.Password)); err != nil {
 			return utils.Error(c, fiber.StatusUnauthorized, "Invalid email or password")
 		}
-
+		if !u.IsActive {
+			return utils.Error(c, fiber.StatusForbidden, "Akun belum aktif. Silakan tunggu verifikasi admin.")
+		}
 		token, err := utils.GenerateToken(u.ID)
 		if err != nil {
 			return utils.Error(c, fiber.StatusInternalServerError, "Failed to generate token")
