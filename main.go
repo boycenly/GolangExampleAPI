@@ -17,6 +17,8 @@ func main() {
 	routes.SetupAuthRoutes(app)
 	// 3. Setup routes
 	routes.SetupExampleRoutes(app)
+	// 4. Setup routes user
+	routes.SetupUserRoutes(app)
 
 	// 4. Jalankan servers
 	fmt.Println("Server running at http://localhost:3000")
